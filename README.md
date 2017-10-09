@@ -27,14 +27,16 @@ Steps to upload assets at google cloud storage, dynamic bucket handling, details
 	5. check the 'Furnish a new private key' checkbox and select JSON
 	6. click on create and save the downloaded json file in root folder of app and replace the name in google_cloud_storage.rb file accordingly
 
-# step 4
+# Step 4
 -- see the possible methods from http://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-storage/v1.6.0/google/cloud/storage
 
 ### Example to upload image at gcs using above configurations.
+-- Basic example to upload an image. 
+-- Some available methods to retrieve details of the image uploaded.
 
 	 -- bucket = GoogleCloudStorage.bucket "my-todo-app" 
-	 # GoogleCloudStorage is the variable defined in google_cloud_storage initializer file.
-	 # "my-todo-app" is the name of the bucket already created at GCS. if bucket doesn't exist, create it using "bucket = storage.bucket "my-todo-app"
+	 //GoogleCloudStorage is the variable defined in google_cloud_storage initializer file.
+	 //"my-todo-app" is the name of the bucket already created at GCS. if bucket doesn't exist, create it using "bucket = storage.bucket "my-todo-app"
 
 	 -- file = bucket.create_file 'C:\Users\Simran\Desktop\memw0pud152o.png', 'testimage.png'
 
@@ -47,7 +49,7 @@ Steps to upload assets at google cloud storage, dynamic bucket handling, details
 		> file.gapi.updated   (Time.at(file.gapi.updated))
 
 
-### Example for dynamically naming the bucket 
+### Example for Dynamically Naming the Bucket 
 --(let us say name of bucket we want is "dynamic-bucket")
 	> bucket = GoogleCloudStorage.bucket "dynamic-bucket"
 	> bucket = GoogleCloudStorage.create_bucket "dynamic-bucket" unless bucket.present? # this will create the required bucket if doesn't exists
