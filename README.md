@@ -2,11 +2,13 @@
 Steps to upload assets at google cloud storage, dynamic bucket handling, details of files uploaded, etc. See README for more details
 
 
-# step 1 (Install the gem dependencies and add below lines in gemfile)
+# Step 1 
+--(Install the gem dependencies and add below lines in gemfile)
 	gem 'google-cloud-storage'
 	gem 'google-api-client', '~> 0.11.0'
 
-# step 2 (create intializer file named 'google_cloud_storage.rb' or any other required name and add below lines)
+# Step 2 
+--(create intializer file named 'google_cloud_storage.rb' or any other required name and add below lines)
 	require "google/cloud/storage"
 	GoogleCloudStorage = Google::Cloud::Storage.new(
 	 project: "gd-test-167412",
@@ -16,7 +18,8 @@ Steps to upload assets at google cloud storage, dynamic bucket handling, details
 	#in above: project value is the global project-id 
 	#keyfile is json file generated from IAM panel in google console. (mentioned below) and add file name inside
 
-# step 3 (create json key file from IAM google console.)
+# Step 3 
+--(create json key file from IAM google console.)
 	1. Goto IAM in console
 	2. create service account
 	3. add some service account name in name field
@@ -25,7 +28,7 @@ Steps to upload assets at google cloud storage, dynamic bucket handling, details
 	6. click on create and save the downloaded json file in root folder of app and replace the name in google_cloud_storage.rb file accordingly
 
 # step 4
-	-- see the possible methods from http://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-storage/v1.6.0/google/cloud/storage
+-- see the possible methods from http://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-storage/v1.6.0/google/cloud/storage
 
 ### Example to upload image at gcs using above configurations.
 
@@ -44,7 +47,8 @@ Steps to upload assets at google cloud storage, dynamic bucket handling, details
 		> file.gapi.updated   (Time.at(file.gapi.updated))
 
 
-### Example for dynamically naming the bucket (let us say name of bucket we want is "dynamic-bucket")
+### Example for dynamically naming the bucket 
+--(let us say name of bucket we want is "dynamic-bucket")
 	> bucket = GoogleCloudStorage.bucket "dynamic-bucket"
 	> bucket = GoogleCloudStorage.create_bucket "dynamic-bucket" unless bucket.present? # this will create the required bucket if doesn't exists
 	> ...
