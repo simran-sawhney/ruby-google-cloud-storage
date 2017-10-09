@@ -1,4 +1,4 @@
-# ruby-google-cloud-storage-steps
+# ruby-google-cloud-storage
 Steps to upload assets at google cloud storage, dynamic bucket handling, details of files uploaded, etc. See README for more details
 
 
