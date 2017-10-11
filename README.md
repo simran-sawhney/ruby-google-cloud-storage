@@ -4,16 +4,18 @@ Steps to upload assets at google cloud storage, dynamic bucket handling, details
 
 # Step 1 
 --(Install the gem dependencies and add below lines in gemfile)
-	gem 'google-cloud-storage'
-	gem 'google-api-client', '~> 0.11.0'
+	
+	1. gem 'google-cloud-storage'
+	2. gem 'google-api-client', '~> 0.11.0'
 
 # Step 2 
 --(create intializer file named 'google_cloud_storage.rb' or any other required name and add below lines)
-	require "google/cloud/storage"
-	GoogleCloudStorage = Google::Cloud::Storage.new(
-	 project: "gd-test-167412",
-	 keyfile: Rails.root.join('gd-test-8672a93d6171.json')
-	)
+	
+	1. require "google/cloud/storage"
+	2. GoogleCloudStorage = Google::Cloud::Storage.new(
+	   	project: "gd-test-167412",
+	 	keyfile: Rails.root.join('gd-test-8672a93d6171.json')
+	    )
 
 	#in above: project value is the global project-id 
 	#keyfile is json file generated from IAM panel in google console. (mentioned below) and add file name inside
